@@ -74,6 +74,7 @@ def x_speed(v_y):
 
 X_ = x(v_x)
 Y_ = y(v_y)
+print(len(X_))
 
 X_speed = x_speed(v_x)
 Y_speed = y_speed(v_x)
@@ -88,3 +89,16 @@ ax1.set_title('x_speed')
 ax2.plot(t, Y_speed, color = "green")
 ax2.set_title('y_speed')
 plt.show()
+
+plt.figure()
+plt.ion()
+
+i = 0
+while i < n*tmax:
+    plt.clf()
+    plt.title('Time = {} secondes'.format(t[i]))
+    plt.scatter(X_[i], Y_[i])
+    plt.xlim([0, 300])
+    plt.ylim([-10, 150])
+    i = i + 9000
+    plt.pause(dt)
